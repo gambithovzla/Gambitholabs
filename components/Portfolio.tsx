@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 const TECH_BADGES = [
-  "Node.js", "React", "PostgreSQL", "Anthropic Claude", "xAI Grok", "XGBoost", "Statcast API", "Real-time odds",
+  "Node.js", "React", "PostgreSQL", "Statcast API", "Real-time data", "Statistical models",
 ];
 
 const HEXA_SCREENS = [
@@ -65,18 +65,18 @@ export default function Portfolio() {
               className="font-sans font-semibold text-[32px] text-fg leading-[1.15] mb-4"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Plataforma de inteligencia predictiva para MLB.
+              Plataforma de análisis estadístico para MLB.
             </h3>
             <p className="text-[16px] text-fg2 leading-[1.6] mb-6">
-              Motor oracle multi-modelo (Claude + Grok) que analiza partidos de béisbol en tiempo real — integrando Statcast, cuotas en vivo, clima y alineaciones — para generar picks, parlays y análisis de valor esperado con validación estadística (XGBoost + CLV tracking). Construido de cero por Gambitho Labs.
+              Sistema de scoring avanzado que integra Statcast, cuotas en vivo, clima y alineaciones para generar picks, parlays y análisis de valor esperado. Construido de cero por Gambitho Labs.
             </p>
 
             {/* Stats */}
             <div className="flex gap-8 flex-wrap mb-6">
               {[
-                { n: "2",     label: "motores IA en paralelo" },
+                { n: "6",     label: "módulos en producción" },
                 { n: "99.9%", label: "uptime" },
-                { n: "MLB",   label: "datos Statcast en tiempo real" },
+                { n: "MLB",   label: "datos en tiempo real" },
               ].map(({ n, label }) => (
                 <div key={label}>
                   <div
