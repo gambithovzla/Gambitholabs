@@ -2,14 +2,14 @@ import Image from "next/image";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 const TECH_BADGES = [
-  "Next.js", "TypeScript", "Postgres", "Real-time data", "Statistical models",
+  "Node.js", "React", "PostgreSQL", "Anthropic Claude", "xAI Grok", "XGBoost", "Statcast API", "Real-time odds",
 ];
 
 const HEXA_SCREENS = [
   { src: "/hexa-semana.png",    label: "SEMANA ACTUAL" },
   { src: "/hexa-resumen.png",   label: "RESUMEN" },
   { src: "/hexa-historial.png", label: "HISTORIAL" },
-  { src: "/hexa-parlay.png",    label: "PARLAY" },
+  { src: "/hexa-parlay.png",    label: "PARLAY ARCHITECT" },
 ];
 
 const COMING_SOON = ["02", "03", "04"];
@@ -65,19 +65,18 @@ export default function Portfolio() {
               className="font-sans font-semibold text-[32px] text-fg leading-[1.15] mb-4"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Plataforma de gestión para negocios.
+              Plataforma de inteligencia predictiva para MLB.
             </h3>
             <p className="text-[16px] text-fg2 leading-[1.6] mb-6">
-              Inventario, ventas, automatización y métricas en un solo sistema.
-              Diseñado y construido de cero por Gambitho Labs.
+              Motor oracle multi-modelo (Claude + Grok) que analiza partidos de béisbol en tiempo real — integrando Statcast, cuotas en vivo, clima y alineaciones — para generar picks, parlays y análisis de valor esperado con validación estadística (XGBoost + CLV tracking). Construido de cero por Gambitho Labs.
             </p>
 
             {/* Stats */}
             <div className="flex gap-8 flex-wrap mb-6">
               {[
-                { n: "+340",  label: "negocios activos" },
+                { n: "2",     label: "motores IA en paralelo" },
                 { n: "99.9%", label: "uptime" },
-                { n: "6",     label: "módulos en producción" },
+                { n: "MLB",   label: "datos Statcast en tiempo real" },
               ].map(({ n, label }) => (
                 <div key={label}>
                   <div
