@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -143,9 +144,9 @@ function BrowserFrame() {
     <div
       className="rounded-[14px] overflow-hidden border"
       style={{
-        background: "#11161f",
         borderColor: "rgba(255,255,255,0.10)",
         boxShadow: "0 24px 48px -16px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.4)",
+        background: "#19202b",
       }}
     >
       {/* Browser chrome */}
@@ -160,87 +161,18 @@ function BrowserFrame() {
           className="flex-1 ml-2.5 font-mono text-[11px] text-fg3 rounded-[6px] px-2.5 py-1"
           style={{ background: "#11161f" }}
         >
-          hexa.app/dashboard
+          hexaoracle.lat
         </div>
       </div>
-
-      {/* Dashboard content */}
-      <div className="p-[18px] grid grid-cols-2 gap-3">
-        {/* Header row */}
-        <div className="col-span-2 flex items-center justify-between">
-          <div>
-            <div className="font-mono text-[10px] text-brand uppercase tracking-[0.12em]">
-              HEXA · OVERVIEW
-            </div>
-            <div className="font-sans font-semibold text-[18px] text-fg mt-1">
-              Buen día, Andrés
-            </div>
-          </div>
-          <span
-            className="inline-flex items-center gap-1.5 font-mono text-[10px] text-signal rounded-full px-2.5 py-1"
-            style={{ background: "rgba(74,222,128,0.10)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse2" />
-            running
-          </span>
-        </div>
-
-        {/* Metric cards */}
-        <div
-          className="rounded-[10px] p-[14px] border"
-          style={{ background: "#19202b", borderColor: "rgba(255,255,255,0.06)" }}
-        >
-          <div className="font-mono text-[10px] text-fg3 uppercase tracking-[0.12em]">VENTAS · 7d</div>
-          <div
-            className="font-sans font-semibold text-[22px] text-fg mt-1"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            $ 12,840
-          </div>
-          <div className="text-[11px] text-signal mt-1">↑ 18.4 %</div>
-        </div>
-
-        <div
-          className="rounded-[10px] p-[14px] border"
-          style={{ background: "#19202b", borderColor: "rgba(255,255,255,0.06)" }}
-        >
-          <div className="font-mono text-[10px] text-fg3 uppercase tracking-[0.12em]">PEDIDOS</div>
-          <div
-            className="font-sans font-semibold text-[22px] text-fg mt-1"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            342
-          </div>
-          <div className="text-[11px] text-fg3 mt-1">+24 hoy</div>
-        </div>
-
-        {/* Activity chart */}
-        <div
-          className="col-span-2 rounded-[10px] p-[14px] border relative overflow-hidden"
-          style={{ background: "#19202b", borderColor: "rgba(255,255,255,0.06)", height: 90 }}
-        >
-          <div className="font-mono text-[10px] text-fg3 uppercase tracking-[0.12em]">ACTIVIDAD</div>
-          <svg
-            viewBox="0 0 280 50"
-            className="absolute"
-            style={{ left: 14, right: 14, bottom: 12, width: "calc(100% - 28px)" }}
-            aria-hidden="true"
-          >
-            <path
-              d="M0,40 L30,32 L60,36 L90,20 L120,28 L150,12 L180,18 L210,8 L240,14 L280,4"
-              fill="none"
-              stroke="#3a7bff"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M0,40 L30,32 L60,36 L90,20 L120,28 L150,12 L180,18 L210,8 L240,14 L280,4 L280,50 L0,50 Z"
-              fill="rgba(58,123,255,0.15)"
-            />
-          </svg>
-        </div>
-      </div>
+      {/* Real HEXA screenshot */}
+      <Image
+        src="/hexa-semana.png"
+        alt="HEXA Oracle — MLB Intelligence Platform"
+        width={620}
+        height={420}
+        className="w-full object-cover object-top"
+        priority
+      />
     </div>
   );
 }
