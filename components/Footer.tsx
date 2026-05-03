@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="font-mono text-[11px] text-fg3 uppercase tracking-[0.12em]">
-          © 2026 — Gambitho Labs · hecho con código
+          © 2026 — Gambitho Labs
         </p>
       </div>
     </footer>
