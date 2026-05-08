@@ -42,7 +42,7 @@ export default function Portfolio() {
               className="font-sans font-semibold text-fg mt-4"
               style={{ fontSize: 48, lineHeight: 1.1, letterSpacing: "-0.02em" }}
             >
-              Cosas que hemos puesto a funcionar.
+              Proyectos que hemos llevado a producción.
             </h2>
           </div>
           <a
