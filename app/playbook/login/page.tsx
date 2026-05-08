@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import type { Metadata } from "next";
 import { deriveToken, PLAYBOOK_COOKIE } from "@/lib/playbook-auth";
+import PasswordInput from "./PasswordInput";
 
 export const metadata: Metadata = {
   title: "Acceso · Playbook · Gambitho Labs",
@@ -58,14 +59,7 @@ export default async function LoginPage({
 
         <label className="login-field">
           <span>Contraseña</span>
-          <input
-            type="password"
-            name="password"
-            autoFocus
-            required
-            autoComplete="current-password"
-            placeholder="••••••••"
-          />
+          <PasswordInput />
         </label>
 
         {error ? (
@@ -153,9 +147,10 @@ const LOGIN_CSS = `
     letter-spacing: 0.12em;
     margin-bottom: 8px;
   }
+  .pw-wrap { position: relative; width: 100%; }
   .login-field input {
     width: 100%;
-    padding: 14px 16px;
+    padding: 14px 48px 14px 16px;
     background: #07090d;
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: 10px;
@@ -170,6 +165,28 @@ const LOGIN_CSS = `
   .login-field input:focus {
     border-color: #3a7bff;
     box-shadow: 0 0 0 1px #3a7bff, 0 0 12px rgba(58,123,255,0.2);
+  }
+  .pw-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    color: #7d8898;
+    cursor: pointer;
+    transition: color 0.18s, background 0.18s;
+    padding: 0;
+  }
+  .pw-toggle:hover { color: #f3f6fb; background: rgba(255,255,255,0.05); }
+  .pw-toggle:focus-visible {
+    color: #3a7bff;
+    box-shadow: 0 0 0 2px #3a7bff;
   }
   .login-error {
     font-size: 13px;
