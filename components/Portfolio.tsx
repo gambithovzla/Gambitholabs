@@ -273,7 +273,7 @@ export default function Portfolio() {
             }}
           >
             <Image
-              src="/logo.png"
+              src="/logo-circle.png"
               alt="Gambitho Labs — Ideas, Systems, Results"
               width={420}
               height={420}
