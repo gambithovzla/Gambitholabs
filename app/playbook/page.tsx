@@ -44,7 +44,7 @@ export default async function PlaybookPage() {
           </div>
           <div className="cover-visual">
             <Image
-              src="/gambitholabs-portafolio.png"
+              src="/logo.png"
               alt="Gambitho Labs"
               width={600}
               height={600}
@@ -172,13 +172,24 @@ const PLAYBOOK_CSS = `
   .cover-visual {
     position: relative;
     aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+  }
+  .cover-visual::before {
+    content: "";
+    position: absolute;
+    inset: 8%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(58,123,255,0.25), transparent 65%);
+    filter: blur(20px);
+    pointer-events: none;
   }
   .cover-image {
-    width: 100%;
+    position: relative;
+    width: 88%;
     height: auto;
-    border-radius: 18px;
-    border: 1px solid rgba(58, 123, 255, 0.3);
-    box-shadow: 0 24px 48px -16px rgba(0,0,0,0.7), 0 0 60px rgba(58,123,255,0.15);
+    max-width: 460px;
+    filter: drop-shadow(0 16px 40px rgba(0,0,0,0.5));
   }
   .cover-foot {
     max-width: 1100px;
@@ -408,7 +419,8 @@ const PLAYBOOK_CSS = `
     .cover-tagline, .cover-table dd { color: #0b0f15; }
     .cover-table dt { color: #4d5664; }
     .cover-table dd { border-bottom-color: #d0d5dc; }
-    .cover-image { box-shadow: none; border-color: #d0d5dc; }
+    .cover-visual::before { display: none; }
+    .cover-image { filter: none; }
     .cover-foot { color: #7d8898; }
     .prose { color: #0b0f15; padding: 24px 40px; max-width: none; }
     .prose h1 { color: #0b0f15; border-top-color: #3a7bff; page-break-before: always; }

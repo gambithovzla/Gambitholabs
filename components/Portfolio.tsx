@@ -264,18 +264,20 @@ export default function Portfolio() {
           style={{ background: "#11161f", borderColor: "rgba(255,255,255,0.10)" }}
         >
           {/* Visual */}
-          <div className="relative" style={{ minHeight: 280 }}>
+          <div
+            className="relative grid place-items-center"
+            style={{
+              minHeight: 280,
+              background:
+                "radial-gradient(circle at 50% 50%, rgba(58,123,255,0.12), transparent 65%)",
+            }}
+          >
             <Image
-              src="/gambitholabs-portafolio.png"
+              src="/logo.png"
               alt="Gambitho Labs — Ideas, Systems, Results"
-              width={800}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none"
-              style={{ background: "linear-gradient(90deg, transparent 40%, #11161f 100%)" }}
+              width={420}
+              height={420}
+              className="w-[260px] h-[260px] object-contain"
             />
           </div>
 
