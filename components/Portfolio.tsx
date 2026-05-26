@@ -25,14 +25,14 @@ const JF_SCREENS = [
 ];
 
 const PT_BADGES = [
-  "Shopify", "Liquid", "CSS", "Metafields", "Checkout Extensions", "SEO",
+  "Shopify", "Liquid", "Metafields", "Checkout Extensions", "Branding", "SEO",
 ];
 
 const PT_SCREENS = [
-  { src: "/pt-screen-hero.png",      label: "HERO" },
-  { src: "/pt-screen-productos.png", label: "PRODUCTOS" },
-  { src: "/pt-screen-carrito.png",   label: "CARRITO" },
-  { src: "/pt-screen-checkout.png",  label: "CHECKOUT" },
+  { src: "/pt-screen-hero.jpg",     label: "HERO" },
+  { src: "/pt-screen-promesa.jpg",  label: "LA PROMESA" },
+  { src: "/pt-screen-tommi.jpg",    label: "TOMMI" },
+  { src: "/pt-screen-checkout.jpg", label: "CHECKOUT" },
 ];
 
 export default function Portfolio() {
@@ -286,18 +286,18 @@ export default function Portfolio() {
               className="font-sans font-semibold text-[32px] text-fg leading-[1.15] mb-4"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Tienda online de snacks saludables para niños.
+              Snacks honestos para barriguitas exigentes.
             </h3>
             <p className="text-[16px] text-fg2 leading-[1.6] mb-6">
-              E-commerce construido sobre Shopify para una marca peruana de alimentos pensados para pequeños selectivos. Catálogo de productos, carrito optimizado, checkout integrado y experiencia de marca cuidada para conectar con madres y padres.
+              E-commerce Shopify para una marca peruana de snacks artesanales — galletas, crackers, buns y kekes hechos con vegetales y frutas reales. Identidad de marca propia, catálogo por categorías, checkout integrado y 0 colorantes artificiales en la etiqueta.
             </p>
 
             {/* Stats */}
             <div className="flex gap-8 flex-wrap mb-6">
               {[
-                { n: "Shopify", label: "plataforma" },
-                { n: "Perú",    label: "mercado local" },
-                { n: "100%",    label: "mobile first" },
+                { n: "26",   label: "sabores aprobados" },
+                { n: "0",    label: "colorantes artificiales" },
+                { n: "100%", label: "ingredientes naturales" },
               ].map(({ n, label }) => (
                 <div key={label}>
                   <div
