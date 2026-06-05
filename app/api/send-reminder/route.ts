@@ -37,11 +37,3 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(results);
 }
-
-// Endpoint de prueba temporal — eliminar después de verificar que funciona
-export async function POST(request: NextRequest) {
-  const body = await request.json().catch(() => ({}));
-  const type = body.type === "advance" ? "advance" : "due";
-  const res = await sendPaymentReminder(type);
-  return NextResponse.json({ sent: true, type, result: res });
-}
