@@ -125,6 +125,42 @@ para que funcione. Simplemente no va a aparecer en búsquedas.
 
 ---
 
+## La identidad real de la fiesta
+
+Los colores y símbolos NO son inventados: salen de las láminas de la fiesta (torta,
+galletas, mochilas, capas), muestreadas pixel a pixel.
+
+| Color | De dónde salió | Hex |
+|-------|----------------|-----|
+| Azul marino | swatch de la lámina de la torta | `#12253E` |
+| Vinotinto | swatch de la lámina de la torta | `#80161C` |
+| Mostaza | el rayo de la mochila | `#F8B020` |
+| Dorado metálico | el "1" de la torta | `#D09858` |
+| Gris | swatch de la lámina de la torta | `#999999` |
+| Blanco / marfil | swatch de la lámina de la torta | `#FCF9F4` |
+| Rosa empolvado | la capa de superheroína | `#E8A088` |
+
+**Los símbolos de la colección son tres:** el escudo alado con la S y el "1" en
+medalla, el **rayo** (símbolo de niño) y la **estrella** (símbolo de niña). Los tres
+forman la celosía del fondo.
+
+**Las capas son reales y van así:** la de niño es azul marino con forro mostaza; la de
+niña es rosa empolvado con forro dorado. Los valores que viajan a WhatsApp lo dicen
+completo ("Capa de superhéroe (azul marino)").
+
+**La ceremonia** del expediente EXP-002 es el programa real: cuatro pruebas después
+del almuerzo y diploma con medalla para cada héroe. Si en algún momento no quieres
+anunciarla, se borra ese bloque `<div class="expediente">` entero y no rompe nada.
+
+Dos cosas del material de la fiesta que la página todavía NO usa:
+
+- En el hero, el "1" va en una cinta simple; en el escudo oficial va dentro de una
+  medalla dorada (el blasón de la página sí la tiene).
+- Las niñas, en las capas, llevan un emblema de corazón con corona en vez del escudo.
+  La página les muestra el escudo a todos.
+
+---
+
 ## El fondo es un material, no un color
 
 El degradado azul no decía nada: cualquier página podía tenerlo. Ahora el fondo de la

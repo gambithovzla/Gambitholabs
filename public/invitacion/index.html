@@ -9,14 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Jost:wght@300;400;500&family=Saira+Stencil+One&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noche:#0B1220;
-    --marino:#1B2A4A;
-    --vino:#8E1B2E;
-    --oro:#D4A02C;
-    --oro-claro:#F0CE7B;
-    --plomo:#9AA1A9;
-    --marfil:#F5EFE3;
-    --suelo:#070C16;
+    /* Paleta tomada de las láminas de la fiesta (torta, galletas, mochilas, capas) */
+    --noche:#0A1526;
+    --marino:#12253E;
+    --vino:#80161C;
+    --oro:#E9A82B;
+    --oro-claro:#FFCB5C;
+    --mostaza:#F8B020;   /* el rayo */
+    --dorado:#D09858;    /* el 1 metálico de la torta */
+    --rosa:#E8A088;      /* capa de superheroína */
+    --plomo:#999999;
+    --marfil:#FCF9F4;
+    --suelo:#070F1C;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -25,7 +29,7 @@
        escudos y estrellas grabada en relieve. La escena del hero NO lo lleva:
        alli manda la ilustracion, igual que en las apps de Nintendo. */
     background-color:var(--suelo);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke-width='1.3' stroke-linejoin='round'%3E%3Cg stroke='%23000000' stroke-opacity='.6' transform='translate(0 1.3)'%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(120 120)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(60 0)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(120 60)'/%3E%3C/g%3E%3Cg stroke='%23F0CE7B' stroke-opacity='.09'%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z' transform='translate(120 120)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(60 0)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-6.6L1.7,-2.3L6.3,-2.0L2.8,0.9L3.9,5.3L0.0,2.9L-3.9,5.3L-2.8,0.9L-6.3,-2.0L-1.7,-2.3Z' transform='translate(120 60)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke-width='1.3' stroke-linejoin='round'%3E%3Cg stroke='%23000000' stroke-opacity='.6' transform='translate(0 1.3)'%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 120)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 0)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(120 60)'/%3E%3C/g%3E%3Cg stroke='%23F8B020' stroke-opacity='.085'%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 120)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 0)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(120 60)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color:var(--marfil);
     font-family:'Jost',system-ui,sans-serif;
     font-weight:300;
@@ -174,7 +178,8 @@
   .blason{display:flex;align-items:center;gap:14px;margin:0 0 30px}
   .blason .filete{flex:1;height:0;border-top:1px solid rgba(212,160,44,.22)}
   .blason .sello-casa{flex:0 0 auto;display:grid;place-items:center;text-align:center}
-  .blason svg{width:34px;height:42px;display:block;margin:0 auto}
+  .blason svg{width:122px;height:auto;display:block;margin:0 auto}
+  .blason{gap:10px}
   .blason b{
     display:block;margin-top:7px;
     font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
@@ -215,6 +220,24 @@
   .dato dd span{display:block;font-size:12.5px;color:var(--plomo);margin-top:5px;letter-spacing:.02em}
 
   /* ---------- insignias ---------- */
+  .intro{font-size:14px;color:rgba(252,249,244,.8);margin:0 0 20px;line-height:1.6}
+  .pruebas{list-style:none;margin:0;padding:0}
+  .pruebas li{display:flex;gap:13px;align-items:flex-start;padding:13px 0}
+  .pruebas li + li{border-top:1px solid rgba(153,153,153,.13)}
+  .pruebas li:first-child{padding-top:0}
+  .pruebas .num{
+    flex:0 0 30px;display:grid;place-items:center;width:30px;height:34px;
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);background:var(--oro);
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:14px;color:#12253E;
+  }
+  .pruebas b{display:block;font-weight:400;font-size:15.5px;color:var(--marfil);line-height:1.3}
+  .pruebas div span{display:block;font-size:12.5px;color:var(--plomo);margin-top:4px;line-height:1.5}
+  .premio{
+    margin:20px 0 0;padding:12px 14px;text-align:center;
+    border:1px dashed rgba(233,168,43,.38);
+    font-size:12.5px;color:var(--oro-claro);line-height:1.5;
+  }
   .pregunta{
     font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
     font-size:11px;letter-spacing:.15em;text-transform:uppercase;
@@ -364,19 +387,19 @@
   <svg class="cielo" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
       <linearGradient id="gBeam" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%"  stop-color="#F0CE7B" stop-opacity=".5"/>
-        <stop offset="45%" stop-color="#D4A02C" stop-opacity=".2"/>
-        <stop offset="100%" stop-color="#D4A02C" stop-opacity="0"/>
+        <stop offset="0%"  stop-color="#FFCB5C" stop-opacity=".5"/>
+        <stop offset="45%" stop-color="#E9A82B" stop-opacity=".2"/>
+        <stop offset="100%" stop-color="#E9A82B" stop-opacity="0"/>
       </linearGradient>
       <radialGradient id="gGlow">
-        <stop offset="0%"  stop-color="#F0CE7B" stop-opacity=".7"/>
-        <stop offset="45%" stop-color="#D4A02C" stop-opacity=".2"/>
-        <stop offset="100%" stop-color="#D4A02C" stop-opacity="0"/>
+        <stop offset="0%"  stop-color="#FFCB5C" stop-opacity=".7"/>
+        <stop offset="45%" stop-color="#E9A82B" stop-opacity=".2"/>
+        <stop offset="100%" stop-color="#E9A82B" stop-opacity="0"/>
       </radialGradient>
       <linearGradient id="gOro" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#F0CE7B"/>
-        <stop offset="55%" stop-color="#D4A02C"/>
-        <stop offset="100%" stop-color="#9A6F16"/>
+        <stop offset="0%" stop-color="#FFCB5C"/>
+        <stop offset="55%" stop-color="#E9A82B"/>
+        <stop offset="100%" stop-color="#A0701A"/>
       </linearGradient>
       <filter id="fSuave" x="-60%" y="-60%" width="220%" height="220%">
         <feGaussianBlur stdDeviation="14"/>
@@ -405,14 +428,14 @@
         </g>
         <g fill="url(#gOro)" id="arcoEstrellas"></g>
         <path d="M0,-62 L46,-46 L46,14 C46,50 24,72 0,84 C-24,72 -46,50 -46,14 L-46,-46 Z"
-              fill="#1B2A4A" stroke="url(#gOro)" stroke-width="3.5"/>
+              fill="#12253E" stroke="url(#gOro)" stroke-width="3.5"/>
         <path d="M0,-52 L37,-39 L37,12 C37,42 19,61 0,71 C-19,61 -37,42 -37,12 L-37,-39 Z"
               fill="none" stroke="rgba(240,206,123,.35)" stroke-width="1"/>
         <text id="inicial" x="0" y="26" text-anchor="middle" font-family="Cinzel, serif"
               font-weight="900" font-size="74" fill="#F5EFE3">S</text>
-        <path d="M-64,66 L64,66 L52,92 L-52,92 Z" fill="#8E1B2E"/>
-        <path d="M-64,66 L-78,58 L-70,80 L-64,74 Z" fill="#6B121F"/>
-        <path d="M64,66 L78,58 L70,80 L64,74 Z" fill="#6B121F"/>
+        <path d="M-64,66 L64,66 L52,92 L-52,92 Z" fill="#80161C"/>
+        <path d="M-64,66 L-78,58 L-70,80 L-64,74 Z" fill="#5C0F15"/>
+        <path d="M64,66 L78,58 L70,80 L64,74 Z" fill="#5C0F15"/>
         <text x="0" y="88" text-anchor="middle" font-family="Cinzel, serif"
               font-weight="700" font-size="24" fill="url(#gOro)">1</text>
       </g>
@@ -438,11 +461,30 @@
   <div class="blason">
     <span class="filete" aria-hidden="true"></span>
     <span class="sello-casa">
-      <svg viewBox="-16 -18 32 40" aria-hidden="true">
-        <path d="M0,-14 L12,-9.5 L12,2.5 C12,10 5.6,15 0,17.5 C-5.6,15 -12,10 -12,2.5 L-12,-9.5 Z"
-              fill="#0B1220" stroke="#D4A02C" stroke-width="1.8"/>
-        <text x="0" y="6.5" text-anchor="middle" font-family="Cinzel, serif"
-              font-weight="900" font-size="15" fill="#F0CE7B">S</text>
+      <svg viewBox="-190 -104 380 220" aria-hidden="true">
+        <g fill="#8C949E">
+          <path d="M-60,-34 C-104,-40 -150,-26 -176,-2 C-142,-8 -118,-6 -96,4 C-86,-12 -74,-24 -60,-34 Z"/>
+          <path d="M-58,-10 C-96,-12 -130,0 -150,18 C-122,12 -102,14 -86,22 C-78,10 -68,-1 -58,-10 Z" opacity=".7"/>
+          <path d="M60,-34 C104,-40 150,-26 176,-2 C142,-8 118,-6 96,4 C86,-12 74,-24 60,-34 Z"/>
+          <path d="M58,-10 C96,-12 130,0 150,18 C122,12 102,14 86,22 C78,10 68,-1 58,-10 Z" opacity=".7"/>
+        </g>
+        <g fill="#E9A82B">
+          <path d="M0,-97 L5.6,-86 L17,-84 L8.5,-76 L10.5,-64 L0,-70 L-10.5,-64 L-8.5,-76 L-17,-84 L-5.6,-86 Z"/>
+          <path d="M-48,-88 L-43.6,-79 L-34,-77.4 L-41,-71 L-39.4,-61 L-48,-66 L-56.6,-61 L-55,-71 L-62,-77.4 L-52.4,-79 Z"/>
+          <path d="M48,-88 L52.4,-79 L62,-77.4 L55,-71 L56.6,-61 L48,-66 L39.4,-61 L41,-71 L34,-77.4 L43.6,-79 Z"/>
+          <path d="M-88,-72 L-84.4,-64 L-76,-62.6 L-82,-57 L-80.6,-49 L-88,-53 L-95.4,-49 L-94,-57 L-100,-62.6 L-91.6,-64 Z"/>
+          <path d="M88,-72 L91.6,-64 L100,-62.6 L94,-57 L95.4,-49 L88,-53 L80.6,-49 L82,-57 L76,-62.6 L84.4,-64 Z"/>
+        </g>
+        <path d="M-64,60 L64,60 L52,86 L-52,86 Z" fill="#80161C"/>
+        <path d="M-64,60 L-80,52 L-71,75 L-64,68 Z" fill="#5C0F15"/>
+        <path d="M64,60 L80,52 L71,75 L64,68 Z" fill="#5C0F15"/>
+        <path d="M0,-56 L46,-40 L46,16 C46,50 24,70 0,82 C-24,70 -46,50 -46,16 L-46,-40 Z"
+              fill="#12253E" stroke="#E9A82B" stroke-width="5"/>
+        <text x="0" y="30" text-anchor="middle" font-family="Cinzel, serif"
+              font-weight="900" font-size="72" fill="#FCF9F4">S</text>
+        <circle cx="0" cy="80" r="20" fill="#E9A82B" stroke="#80161C" stroke-width="3.5"/>
+        <text x="0" y="90" text-anchor="middle" font-family="Cinzel, serif"
+              font-weight="900" font-size="27" fill="#12253E">1</text>
       </svg>
       <b>La Liga de Salvador</b>
     </span>
@@ -475,11 +517,34 @@
 
   <div class="expediente">
     <span class="mira" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="marca" aria-hidden="true">Pruebas</span>
+    <div class="cabecera">
+      <h2>La ceremonia</h2>
+      <span class="hilo" aria-hidden="true"></span>
+      <span class="folio">EXP-002</span>
+    </div>
+    <p class="intro">Después del almuerzo comienza la misión. Cada niño se convierte
+      en un héroe de verdad.</p>
+    <ol class="pruebas">
+      <li><span class="num" aria-hidden="true">1</span><div>
+        <b>Entrenamiento de fuerza</b><span>Demuestra tu fuerza y tu valentía</span></div></li>
+      <li><span class="num" aria-hidden="true">2</span><div>
+        <b>Prueba de velocidad</b><span>Corre, salta y llega a la meta</span></div></li>
+      <li><span class="num" aria-hidden="true">3</span><div>
+        <b>Misión de rescate</b><span>Ayuda a salvar el día</span></div></li>
+      <li><span class="num" aria-hidden="true">4</span><div>
+        <b>Entrega de diploma</b><span>¡Has completado tu misión!</span></div></li>
+    </ol>
+    <p class="premio">Cada héroe recibe su diploma y su medalla.</p>
+  </div>
+
+  <div class="expediente">
+    <span class="mira" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
     <span class="marca" aria-hidden="true">Alta</span>
     <div class="cabecera">
       <h2>Alta en la Liga</h2>
       <span class="hilo" aria-hidden="true"></span>
-      <span class="folio">EXP-002</span>
+      <span class="folio">EXP-003</span>
     </div>
 
     <p class="pregunta" id="q-asiste">¿Te sumas a la Liga?</p>
@@ -510,17 +575,17 @@
       <p class="pregunta" id="q-capa">La capa del niño o niña que viene</p>
       <div class="insignias tres" role="group" aria-labelledby="q-capa">
         <button type="button" class="insignia" data-grupo="capa"
-                data-valor="Capa azul de superhéroe" aria-pressed="true">
+                data-valor="Capa de superhéroe (azul marino)" aria-pressed="true">
           <span class="borde"><span class="cara">
-            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#2F6BD6"/><path d="M6 1h14c.5 2 1 4 1.4 6H4.6C5 5 5.5 3 6 1z" fill="#1E4EA8"/></svg></span>
-            <span class="rotulo-i">Azul</span>
+            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#12253E"/><path d="M13 23.5L2 28C2 20 4 9 6 1h3c-1.5 8-2 18-1.5 24.5z" fill="#F8B020" opacity=".9"/><path d="M6 1h14c.4 1.6.8 3.3 1.1 5H4.9C5.2 4.3 5.6 2.6 6 1z" fill="#0A1526"/></svg></span>
+            <span class="rotulo-i">Héroe</span>
           </span></span>
         </button>
         <button type="button" class="insignia" data-grupo="capa"
-                data-valor="Capa rosa de superheroína" aria-pressed="false">
+                data-valor="Capa de superheroína (rosa empolvado)" aria-pressed="false">
           <span class="borde"><span class="cara">
-            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#E2649B"/><path d="M6 1h14c.5 2 1 4 1.4 6H4.6C5 5 5.5 3 6 1z" fill="#B9407A"/></svg></span>
-            <span class="rotulo-i">Rosa</span>
+            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#E8A088"/><path d="M13 23.5L2 28C2 20 4 9 6 1h3c-1.5 8-2 18-1.5 24.5z" fill="#D09858" opacity=".95"/><path d="M6 1h14c.4 1.6.8 3.3 1.1 5H4.9C5.2 4.3 5.6 2.6 6 1z" fill="#D18770"/></svg></span>
+            <span class="rotulo-i">Heroína</span>
           </span></span>
         </button>
         <button type="button" class="insignia" data-grupo="capa"
@@ -544,7 +609,7 @@
 
 </section>
 
-<p class="firma">Hecho en casa para Salvador</p>
+<p class="firma">Pequeños héroes, grandes aventuras</p>
 
 <script>
 (function(){
@@ -647,7 +712,7 @@
   if (cupos >= 3) escuadron.push('nino');
   while (escuadron.length < cupos) escuadron.push('vacio');
 
-  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa azul de superhéroe' };
+  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa de superhéroe (azul marino)' };
   var viene = true;
 
   var elEscuadron = document.getElementById('escuadron');
