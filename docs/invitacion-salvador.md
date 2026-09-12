@@ -125,6 +125,33 @@ para que funcione. Simplemente no va a aparecer en búsquedas.
 
 ---
 
+## Cómo está hecha la interfaz (para no romperla)
+
+Los controles no son botones de formulario decorados: son objetos del mundo de la Liga.
+
+- **Expedientes** en vez de tarjetas: sin borde de 1px alrededor, sino cuatro esquinas
+  de mira (`.mira i`), trama de puntos de imprenta y grano, y una filigrana vertical.
+- **Insignias hexagonales** en vez de chips: el hexágono es un `clip-path` sobre dos
+  cajas anidadas — `.borde` (dorado) contiene a `.cara` con 2px de padding, y ese
+  padding *es* el filo dorado. Las dos **necesitan `display:block`**; si alguna queda
+  en `inline`, el hexágono colapsa a una astilla.
+- **El escuadrón** reemplaza al contador `− 2 +`. Hay exactamente tantas placas como
+  cupos, así que pasarse es imposible por construcción, no por validación. La primera
+  placa es el invitado, va en vino, dice "TÚ" y está `disabled`: ahí se ve que el cupo
+  lo incluye.
+- **El sello** en vez de un botón ancho: esquinas cortadas en octágono (`clip-path`),
+  cuatro remaches (`radial-gradient`), doble filete dorado (`box-shadow` interior) y
+  una impronta que se estampa al tocarlo.
+
+Texto corto dentro de los hexágonos: "Azul", "Rosa", "Sin capa". Las etiquetas largas
+se salen del `clip-path` y se cortan. Lo que viaja a WhatsApp sigue siendo el texto
+completo, que está en `data-valor`.
+
+La tipografía de rótulos es Saira Stencil One (Google Fonts). Si no carga, cae a la
+sans del sistema y todo sigue legible.
+
+---
+
 ## Cómo mandarlo por WhatsApp
 
 1. Primero el video de la invitación.
