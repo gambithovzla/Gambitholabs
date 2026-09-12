@@ -251,7 +251,7 @@
   </svg>
 
   <div class="titular">
-    <p class="reclutado">Has sido reclutado, <b id="nombre">Tony</b></p>
+    <p class="reclutado"><span id="saludo">Ya eres parte de la Liga,</span> <b id="nombre">Tony</b></p>
     <h1 class="liga"><small>La liga de</small>Salvador</h1>
     <p class="lema">Cada niño, un héroe. Cada misión, un recuerdo.</p>
   </div>
@@ -307,6 +307,18 @@
   document.getElementById('nombre').textContent = nombre;
   document.title = nombre + ', te espera La Liga de Salvador';
   document.getElementById('inicial').textContent = nombre.charAt(0).toUpperCase() || 'S';
+
+  // Genero del invitado: g=f -> reclutada, g=m -> reclutado.
+  // Sin g (o con cualquier otro valor) usa una frase neutra que sirve para todos,
+  // asi que olvidarse del parametro nunca hace que alguien lea el genero equivocado.
+  var g = (params.get('g') || '').trim().toLowerCase().charAt(0);
+  var femenino  = (g === 'f' || g === 'a');
+  var masculino = (g === 'm' || g === 'o' || g === 'h');
+  document.getElementById('saludo').textContent =
+    femenino  ? 'Has sido reclutada,' :
+    masculino ? 'Has sido reclutado,' :
+                'Ya eres parte de la Liga,';
+  var etiqueta = femenino ? 'Invitada: ' : masculino ? 'Invitado: ' : 'Invitado/a: ';
 
   var WHATSAPP = '51925130858'; // número con código de país, sin + ni espacios
 
@@ -373,7 +385,7 @@
 
   document.getElementById('enviar').addEventListener('click', function(){
     var texto = 'Confirmación para el cumpleaños de Salvador\n' +
-      'Invitado: ' + nombre + '\n' + respuesta.asiste + '\n' +
+      etiqueta + nombre + '\n' + respuesta.asiste + '\n' +
       'Adultos: ' + respuesta.adultos + '\n' + 'Niños: ' + respuesta.ninos + '\n' +
       'Capa: ' + respuesta.capa;
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto), '_blank');

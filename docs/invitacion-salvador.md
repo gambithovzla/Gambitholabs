@@ -68,22 +68,34 @@ Sube `index.html` por FTP a la raíz del dominio o subdominio (`public_html/` en
 
 ## Los links por invitado
 
-La página lee el parámetro `n` de la URL y cambia el nombre y la inicial del escudo.
+La página lee dos parámetros de la URL:
 
-| Invitado   | Link                                  |
-|------------|---------------------------------------|
-| Tony       | `https://tusitio.com/?n=Tony`         |
-| Giovanna   | `https://tusitio.com/?n=Giovanna`     |
-| Maria Jose | `https://tusitio.com/?n=Maria%20Jose` |
+| Parámetro | Para qué sirve | Valores |
+|-----------|----------------|---------|
+| `n` | El nombre y la inicial del escudo | El primer nombre del invitado |
+| `g` | Si el saludo dice "reclutado" o "reclutada" | `f` mujer · `m` hombre |
 
-Los espacios van como `%20`. Para evitar líos, usa solo el primer nombre.
+Base: `https://www.gambitholabs.com/invitacion/index.html`
 
-Sin parámetro (`https://tusitio.com`) la página muestra "Tony" por defecto. Si prefieres
-que el genérico diga otra cosa, cambia esta línea:
+| Invitada/o | Link | Lee |
+|------------|------|-----|
+| Chely | `...index.html?n=Chely&g=f` | Has sido **reclutada**, Chely |
+| Tony | `...index.html?n=Tony&g=m` | Has sido **reclutado**, Tony |
+| Maria Jose | `...index.html?n=Maria%20Jose&g=f` | Has sido **reclutada**, Maria Jose |
 
-```js
-var nombre = (params.get('n') || 'Tony').trim().slice(0,24);
-```
+El `&` separa los dos parámetros; el `?` va una sola vez, antes del primero.
+Los espacios van como `%20`, pero es más simple usar solo el primer nombre.
+
+**Si te olvidas del `g`** no se rompe nada ni se equivoca de género: el saludo cambia
+a una frase neutra, "Ya eres parte de la Liga, Chely", que sirve para cualquiera. Ese
+es también lo que se ve al abrir el link pelado, sin parámetros.
+
+El género también ajusta la etiqueta del mensaje que llega a tu WhatsApp
+("Invitada: Chely" / "Invitado: Tony" / "Invitado/a: Chely" si no pusiste `g`).
+
+No lo dejé adivinando el género a partir del nombre a propósito: "Chely" termina en
+-y, "Ruth" y "Beatriz" no terminan en -a, y "Luca" o "Nicola" son de hombre. Cualquier
+regla automática se equivoca con alguien, que es justo lo que queríamos evitar.
 
 ---
 
