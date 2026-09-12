@@ -125,6 +125,33 @@ para que funcione. Simplemente no va a aparecer en búsquedas.
 
 ---
 
+## El fondo es un material, no un color
+
+El degradado azul no decía nada: cualquier página podía tenerlo. Ahora el fondo de la
+página es una **celosía heráldica propia** — el escudo de Salvador y una estrella,
+alternados en celosía y grabados en relieve (una línea negra un pixel abajo, una
+dorada arriba). Es el mismo truco con el que la app de Zelda tesela el Triforce en
+negro sobre negro: aunque tapes todos los textos, la superficie ya tiene dueño.
+
+La celosía es un SVG en `data:` dentro del CSS, sin archivos ni peticiones de red.
+Tesela sin costura porque el escudo se dibuja también en las cuatro esquinas de la
+baldosa: cada una aporta su cuarto y las vecinas completan la figura.
+
+Tres reglas que sostienen el efecto:
+
+1. **El hero no lleva celosía.** Ahí manda la ilustración. El material aparece al
+   salir de la portada, igual que en las apps de Nintendo: portada ilustrada, resto
+   sobre el patrón de la casa.
+2. **Los expedientes son translúcidos** (`rgba(...,.62)`), para que la celosía se lea
+   a través de ellos y la pantalla sea una sola pieza, no cajas flotando.
+3. **Anillos concéntricos** grabados dentro de cada hexágono y de cada placa, para que
+   todo parezca salido del mismo taller.
+
+El suelo (`--suelo:#070C16`) es más profundo que el azul del hero a propósito: el oro
+solo lee como metal si tiene penumbra debajo.
+
+---
+
 ## Cómo está hecha la interfaz (para no romperla)
 
 Los controles no son botones de formulario decorados: son objetos del mundo de la Liga.
