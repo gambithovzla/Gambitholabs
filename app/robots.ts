@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/playbook", "/playbook/"],
+      disallow: ["/playbook", "/playbook/", "/invitacion", "/invitacion/"],
     },
     sitemap: "https://www.gambitholabs.com/sitemap.xml",
   };
