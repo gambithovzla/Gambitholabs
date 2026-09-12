@@ -6,21 +6,30 @@
 <title>La Liga de Salvador</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Jost:wght@300;400;500&family=Saira+Stencil+One&display=swap" rel="stylesheet">
 <style>
   :root{
-    --noche:#0B1220;
-    --marino:#1B2A4A;
-    --vino:#8E1B2E;
-    --oro:#D4A02C;
-    --oro-claro:#F0CE7B;
-    --plomo:#9AA1A9;
-    --marfil:#F5EFE3;
+    /* Paleta tomada de las láminas de la fiesta (torta, galletas, mochilas, capas) */
+    --noche:#0A1526;
+    --marino:#12253E;
+    --vino:#80161C;
+    --oro:#E9A82B;
+    --oro-claro:#FFCB5C;
+    --mostaza:#F8B020;   /* el rayo */
+    --dorado:#D09858;    /* el 1 metálico de la torta */
+    --rosa:#E8A088;      /* capa de superheroína */
+    --plomo:#999999;
+    --marfil:#FCF9F4;
+    --suelo:#070F1C;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
-    background:var(--noche);
+    /* El fondo no es un color: es el material de la Liga, una celosia de
+       escudos y estrellas grabada en relieve. La escena del hero NO lo lleva:
+       alli manda la ilustracion, igual que en las apps de Nintendo. */
+    background-color:var(--suelo);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke-width='1.3' stroke-linejoin='round'%3E%3Cg stroke='%23000000' stroke-opacity='.6' transform='translate(0 1.3)'%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 120)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 0)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(120 60)'/%3E%3C/g%3E%3Cg stroke='%23F8B020' stroke-opacity='.085'%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(60 60)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 0)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(0 120)'/%3E%3Cpath d='M0,-13 L11,-9 L11,2.5 C11,9.5 5,14 0,16.5 C-5,14 -11,9.5 -11,2.5 L-11,-9 Z' transform='translate(120 120)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 0)'/%3E%3Cpath d='M4,-14 L-8,2.5 L-1,2.5 L-4.5,14 L8,-2.5 L1,-2.5 Z' transform='translate(60 120)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(0 60)'/%3E%3Cpath d='M0.0,-7.2L1.8,-2.5L6.8,-2.2L2.9,1.0L4.2,5.8L0.0,3.1L-4.2,5.8L-2.9,1.0L-6.8,-2.2L-1.8,-2.5Z' transform='translate(120 60)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color:var(--marfil);
     font-family:'Jost',system-ui,sans-serif;
     font-weight:300;
@@ -135,54 +144,240 @@
   }
   @keyframes flotar{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(7px);opacity:.85}}
 
-  /* ---------- MISIÓN ---------- */
-  .mision{max-width:560px;margin:0 auto;padding:64px 24px 88px}
-  .placa{
-    border:1px solid rgba(212,160,44,.28);
-    background:linear-gradient(180deg,rgba(27,42,74,.55),rgba(11,18,32,.2));
-    padding:34px 26px;
-  }
-  .placa + .placa{margin-top:22px}
-  .rubro{font-size:13px;letter-spacing:.2em;color:var(--oro);margin:0 0 26px;font-weight:400}
-  dl{margin:0}
-  .dato{display:flex;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(154,161,169,.16)}
-  .dato:first-of-type{border-top:0;padding-top:0}
-  .dato dt{flex:0 0 74px;font-size:13px;color:var(--plomo);letter-spacing:.08em}
-  .dato dd{margin:0;font-size:clamp(17px,4.4vw,20px);font-weight:400;color:var(--marfil)}
-  .dato dd span{display:block;font-size:13px;color:var(--plomo);margin-top:4px}
+  /* ---------- EXPEDIENTE ---------- */
+  .mision{max-width:580px;margin:0 auto;padding:56px 20px 40px}
 
-  .pregunta{font-size:15px;color:rgba(245,239,227,.86);margin:0 0 16px}
-  .opciones{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
-  .chip{
-    font-family:inherit;font-size:15px;background:transparent;color:var(--marfil);
-    border:1px solid rgba(154,161,169,.4);padding:11px 18px;cursor:pointer;
-    transition:border-color .15s,background .15s,color .15s;
+  /* Hoja de expediente: trama de puntos de imprenta + grano, esquinas de mira.
+     Deliberadamente NO es una tarjeta con borde de 1px y esquinas redondeadas. */
+  .expediente{
+    position:relative;
+    overflow:hidden;
+    padding:34px 22px 30px;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)' opacity='.5'/%3E%3C/svg%3E"),
+      repeating-radial-gradient(circle at 18% -10%, rgba(240,206,123,.05) 0 1px, transparent 1px 10px),
+      linear-gradient(168deg, rgba(26,40,70,.62) 0%, rgba(9,15,27,.5) 100%);
+    background-size:140px 140px, 100% 100%, 100% 100%;
+    background-blend-mode:overlay,normal,normal;
+    box-shadow:inset 0 0 80px rgba(0,0,0,.5);
   }
-  .chip:hover{border-color:rgba(212,160,44,.7)}
-  .chip[aria-pressed="true"]{background:var(--oro);border-color:var(--oro);color:#20180A;font-weight:500}
-  .chip:focus-visible,.enviar:focus-visible,.contador button:focus-visible{outline:2px solid var(--oro-claro);outline-offset:3px}
-  .contador{display:flex;align-items:center;gap:16px;margin-bottom:26px}
-  .contador span{font-size:15px;color:rgba(245,239,227,.86);flex:1}
-  .contador button{
-    width:42px;height:42px;font-size:19px;line-height:1;background:transparent;
-    color:var(--marfil);border:1px solid rgba(154,161,169,.4);cursor:pointer;font-family:inherit;
+  .expediente + .expediente{margin-top:26px}
+  .mira{position:absolute;inset:0;pointer-events:none}
+  .mira i{position:absolute;width:24px;height:24px;border:0 solid var(--oro)}
+  .mira i:nth-child(1){top:0;left:0;border-top-width:2px;border-left-width:2px}
+  .mira i:nth-child(2){top:0;right:0;border-top-width:2px;border-right-width:2px}
+  .mira i:nth-child(3){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+  .mira i:nth-child(4){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+  .marca{
+    position:absolute;top:24px;right:4px;writing-mode:vertical-rl;
+    font-family:'Saira Stencil One',system-ui,sans-serif;
+    font-size:clamp(28px,8vw,42px);letter-spacing:.1em;
+    color:rgba(245,239,227,.055);pointer-events:none;user-select:none;
   }
-  .contador output{min-width:28px;text-align:center;font-size:19px}
-  .contador button:disabled{opacity:.28;cursor:not-allowed}
-  .cupos{font-size:13px;color:var(--plomo);margin:-10px 0 26px;line-height:1.6}
-  .cupos.lleno{color:var(--oro)}
-  .enviar{
-    display:block;width:100%;font-family:'Cinzel',serif;font-weight:700;
-    font-size:16px;letter-spacing:.08em;background:var(--vino);color:var(--marfil);
-    border:0;padding:18px;cursor:pointer;transition:background .15s;
+
+  .blason{display:flex;align-items:center;gap:14px;margin:0 0 30px}
+  .blason .filete{flex:1;height:0;border-top:1px solid rgba(212,160,44,.22)}
+  .blason .sello-casa{flex:0 0 auto;display:grid;place-items:center;text-align:center}
+  .blason svg{width:122px;height:auto;display:block;margin:0 auto}
+  .blason{gap:10px}
+  .blason b{
+    display:block;margin-top:7px;
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,160,44,.85);
+    white-space:nowrap;
   }
-  .enviar:hover{background:#A72236}
-  .nota{font-size:13px;color:var(--plomo);text-align:center;margin:16px 0 0;line-height:1.6}
-  .firma{text-align:center;padding:0 24px 48px;font-size:12px;letter-spacing:.18em;color:rgba(154,161,169,.5)}
+
+  .cabecera{display:flex;align-items:center;gap:11px;margin:0 0 24px}
+  .cabecera h2{
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:clamp(14px,4vw,17px);letter-spacing:.09em;text-transform:uppercase;
+    color:var(--oro-claro);margin:0;white-space:nowrap;
+  }
+  .cabecera .hilo{flex:1;height:0;border-top:1px dashed rgba(212,160,44,.32)}
+  .cabecera .folio{font-size:10px;letter-spacing:.2em;color:rgba(154,161,169,.6);white-space:nowrap}
+
+  /* ---------- datos de la mision ---------- */
+  dl{margin:0;position:relative}
+  .dato{display:flex;gap:14px;align-items:flex-start;padding:15px 0}
+  .dato + .dato{border-top:1px solid rgba(154,161,169,.13)}
+  .dato:first-of-type{padding-top:0}
+  .dato dt{
+    flex:0 0 auto;display:flex;align-items:center;gap:9px;
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--plomo);
+    padding-top:3px;
+  }
+  .glifo{
+    display:grid;place-items:center;width:29px;height:33px;flex:0 0 29px;
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);background:rgba(212,160,44,.15);
+  }
+  .glifo svg{width:14px;height:14px;fill:none;stroke:var(--oro);stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  .dato dd{
+    margin:0 0 0 auto;text-align:right;overflow-wrap:break-word;
+    font-size:clamp(16px,4.2vw,19px);font-weight:400;color:var(--marfil);line-height:1.35;
+  }
+  .dato dd span{display:block;font-size:12.5px;color:var(--plomo);margin-top:5px;letter-spacing:.02em}
+
+  /* ---------- insignias ---------- */
+  .intro{font-size:14px;color:rgba(252,249,244,.8);margin:0 0 20px;line-height:1.6}
+  .pruebas{list-style:none;margin:0;padding:0}
+  .pruebas li{display:flex;gap:13px;align-items:flex-start;padding:13px 0}
+  .pruebas li + li{border-top:1px solid rgba(153,153,153,.13)}
+  .pruebas li:first-child{padding-top:0}
+  .pruebas .num{
+    flex:0 0 30px;display:grid;place-items:center;width:30px;height:34px;
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);background:var(--oro);
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:14px;color:#12253E;
+  }
+  .pruebas b{display:block;font-weight:400;font-size:15.5px;color:var(--marfil);line-height:1.3}
+  .pruebas div span{display:block;font-size:12.5px;color:var(--plomo);margin-top:4px;line-height:1.5}
+  .premio{
+    margin:20px 0 0;padding:12px 14px;text-align:center;
+    border:1px dashed rgba(233,168,43,.38);
+    font-size:12.5px;color:var(--oro-claro);line-height:1.5;
+  }
+  .pregunta{
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--plomo);margin:0 0 13px;
+  }
+  .insignias{display:flex;flex-wrap:wrap;gap:11px;margin:0 0 28px}
+  .insignia,.insignia *,.lugar,.lugar *,.dato dt,.dato dd{min-width:0}
+  .insignia{
+    flex:1 1 132px;-webkit-appearance:none;appearance:none;
+    border:0;padding:0;background:transparent;cursor:pointer;font-family:inherit;
+  }
+  .insignias.tres{gap:8px}
+  .insignias.tres .insignia{flex:1 1 0;min-width:66px;max-width:150px}
+  .insignias.tres .rotulo-i{font-size:13px}
+  .insignia .borde{
+    display:block;
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);background:rgba(154,161,169,.3);padding:2px;
+    transition:background .18s ease;
+  }
+  .insignia .cara{
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);
+    background-image:repeating-radial-gradient(circle at 50% 46%, rgba(240,206,123,.075) 0 1px, transparent 1px 7px),linear-gradient(166deg,#17253f,#0b1322);
+    min-height:92px;padding:16px 12px;
+    display:grid;place-items:center;align-content:center;gap:7px;
+    transition:background .18s ease;
+  }
+  .insignia .rotulo-i{
+    font-size:13.5px;line-height:1.25;color:var(--marfil);text-align:center;
+    transition:color .18s ease;
+  }
+  .insignia:hover .borde{background:rgba(212,160,44,.6)}
+  .insignia[aria-pressed="true"] .borde{background:var(--oro-claro)}
+  .insignia[aria-pressed="true"] .cara{
+    background-image:repeating-radial-gradient(circle at 50% 46%, rgba(60,38,4,.13) 0 1px, transparent 1px 7px),linear-gradient(168deg,var(--oro-claro) 0%,var(--oro) 55%,#9A6F16 100%);
+  }
+  .insignia[aria-pressed="true"] .rotulo-i{color:#1A1206;font-weight:500}
+  .insignia .capa-muestra{width:26px;height:30px;display:block}
+  .insignia .capa-muestra svg{display:block;width:100%;height:100%}
+  .insignia .visto{
+    width:15px;height:15px;display:block;opacity:0;transition:opacity .18s ease;
+    fill:none;stroke:#1A1206;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .insignia[aria-pressed="true"] .visto{opacity:1}
+
+  /* ---------- escuadron: un lugar = una placa ---------- */
+  .escuadron{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 13px}
+  .lugar{
+    flex:1 1 68px;max-width:98px;-webkit-appearance:none;appearance:none;
+    border:0;padding:0;background:transparent;cursor:pointer;font-family:inherit;
+  }
+  .lugar .borde{display:block;clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);background:rgba(154,161,169,.22);padding:2px;transition:background .2s ease}
+  .lugar .hueco{
+    clip-path:polygon(50% 0,100% 26%,100% 74%,50% 100%,0 74%,0 26%);
+    background-color:#0A1120;background-image:repeating-radial-gradient(circle at 50% 46%, rgba(240,206,123,.075) 0 1px, transparent 1px 7px);aspect-ratio:1/1.1;
+    display:grid;place-items:center;color:rgba(154,161,169,.45);
+    transition:background .2s ease,color .2s ease;
+  }
+  .lugar svg{width:58%;height:58%;display:block}
+  .lugar .eti{
+    display:block;margin-top:6px;text-align:center;
+    font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--plomo);
+    transition:color .2s ease;
+  }
+  .lugar:hover:not(:disabled) .borde{background:rgba(212,160,44,.55)}
+  .lugar[data-tipo="adulto"] .borde,.lugar[data-tipo="nino"] .borde{background:var(--oro)}
+  .lugar[data-tipo="adulto"] .hueco,.lugar[data-tipo="nino"] .hueco{
+    background-image:repeating-radial-gradient(circle at 50% 46%, rgba(240,206,123,.075) 0 1px, transparent 1px 7px),linear-gradient(168deg,#26385e,#101b30);color:var(--oro-claro);
+  }
+  .lugar[data-tipo="adulto"] .eti,.lugar[data-tipo="nino"] .eti{color:var(--oro-claro)}
+  .lugar[data-tipo="vacio"] .hueco{color:rgba(154,161,169,.3)}
+  .lugar.yo{cursor:default}
+  .lugar.yo .borde{background:var(--vino)}
+  .lugar.yo .hueco{background-image:repeating-radial-gradient(circle at 50% 46%, rgba(240,206,123,.075) 0 1px, transparent 1px 7px),linear-gradient(168deg,#2A1119,#140810);color:var(--marfil)}
+  .lugar.yo .eti{color:#C9808E}
+
+  .cupos{font-size:12.5px;color:var(--plomo);margin:0 0 28px;line-height:1.6}
+  .cupos b{color:var(--marfil);font-weight:400}
+  .cupos.lleno b{color:var(--oro-claro)}
+
+  .apagado{opacity:.3;filter:saturate(.35)}
+  .apagado button{pointer-events:none}
+
+  /* ---------- el sello ---------- */
+  .sello{
+    position:relative;display:block;width:100%;margin:4px 0 0;
+    -webkit-appearance:none;appearance:none;border:0;padding:0;
+    background:transparent;cursor:pointer;font-family:inherit;
+  }
+  .sello .plancha{
+    position:relative;display:grid;place-items:center;padding:21px 16px;
+    clip-path:polygon(15px 0,calc(100% - 15px) 0,100% 15px,100% calc(100% - 15px),
+      calc(100% - 15px) 100%,15px 100%,0 calc(100% - 15px),0 15px);
+    background-image:
+      radial-gradient(circle at 14px 14px, rgba(255,255,255,.45) 0 1.3px, rgba(0,0,0,.45) 1.5px 2.5px, transparent 2.6px),
+      radial-gradient(circle at calc(100% - 14px) 14px, rgba(255,255,255,.45) 0 1.3px, rgba(0,0,0,.45) 1.5px 2.5px, transparent 2.6px),
+      radial-gradient(circle at 14px calc(100% - 14px), rgba(255,255,255,.45) 0 1.3px, rgba(0,0,0,.45) 1.5px 2.5px, transparent 2.6px),
+      radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), rgba(255,255,255,.45) 0 1.3px, rgba(0,0,0,.45) 1.5px 2.5px, transparent 2.6px),
+      linear-gradient(178deg,#A62232 0%,#7C1526 62%,#5C0F1C 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(240,206,123,.55),
+      inset 0 0 0 5px rgba(11,18,32,.4),
+      inset 0 0 0 6px rgba(240,206,123,.3),
+      inset 0 1px 0 rgba(255,255,255,.14);
+    transition:filter .15s ease;
+  }
+  .sello:hover .plancha{filter:brightness(1.12)}
+  .sello .rotulo{
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:clamp(14px,4.2vw,17px);letter-spacing:.13em;text-transform:uppercase;
+    color:#FDF3DC;transition:opacity .2s ease;
+  }
+  .impronta{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0}
+  .impronta span{
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:clamp(15px,4.6vw,19px);letter-spacing:.1em;text-transform:uppercase;
+    color:#FAD7DD;border:3px double #FAD7DD;padding:5px 13px;rotate:-8deg;
+  }
+  .sello.estampado .impronta{animation:estampar 800ms cubic-bezier(.2,1.5,.3,1) both}
+  .sello.estampado .rotulo{opacity:.18}
+  @keyframes estampar{
+    from{opacity:0;transform:scale(2.6)}
+    55%{opacity:1;transform:scale(1)}
+    to{opacity:1;transform:scale(1)}
+  }
+
+  .nota{font-size:12.5px;color:var(--plomo);text-align:center;margin:15px 0 0;line-height:1.6}
+  .firma{
+    text-align:center;padding:34px 24px 48px;
+    font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;
+    font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(154,161,169,.42);
+  }
+
+  .chip:focus-visible,.insignia:focus-visible,.lugar:focus-visible,.sello:focus-visible{
+    outline:2px solid var(--oro-claro);outline-offset:3px;
+  }
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none !important;transition:none !important}
     .beam,.emblema,.ciudad,.reclutado,.liga,.lema,.ventana{opacity:1 !important;transform:none !important}
+    .sello.estampado .impronta{opacity:1 !important}
   }
 </style>
 </head>
@@ -192,19 +387,19 @@
   <svg class="cielo" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
       <linearGradient id="gBeam" x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%"  stop-color="#F0CE7B" stop-opacity=".5"/>
-        <stop offset="45%" stop-color="#D4A02C" stop-opacity=".2"/>
-        <stop offset="100%" stop-color="#D4A02C" stop-opacity="0"/>
+        <stop offset="0%"  stop-color="#FFCB5C" stop-opacity=".5"/>
+        <stop offset="45%" stop-color="#E9A82B" stop-opacity=".2"/>
+        <stop offset="100%" stop-color="#E9A82B" stop-opacity="0"/>
       </linearGradient>
       <radialGradient id="gGlow">
-        <stop offset="0%"  stop-color="#F0CE7B" stop-opacity=".7"/>
-        <stop offset="45%" stop-color="#D4A02C" stop-opacity=".2"/>
-        <stop offset="100%" stop-color="#D4A02C" stop-opacity="0"/>
+        <stop offset="0%"  stop-color="#FFCB5C" stop-opacity=".7"/>
+        <stop offset="45%" stop-color="#E9A82B" stop-opacity=".2"/>
+        <stop offset="100%" stop-color="#E9A82B" stop-opacity="0"/>
       </radialGradient>
       <linearGradient id="gOro" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#F0CE7B"/>
-        <stop offset="55%" stop-color="#D4A02C"/>
-        <stop offset="100%" stop-color="#9A6F16"/>
+        <stop offset="0%" stop-color="#FFCB5C"/>
+        <stop offset="55%" stop-color="#E9A82B"/>
+        <stop offset="100%" stop-color="#A0701A"/>
       </linearGradient>
       <filter id="fSuave" x="-60%" y="-60%" width="220%" height="220%">
         <feGaussianBlur stdDeviation="14"/>
@@ -233,14 +428,14 @@
         </g>
         <g fill="url(#gOro)" id="arcoEstrellas"></g>
         <path d="M0,-62 L46,-46 L46,14 C46,50 24,72 0,84 C-24,72 -46,50 -46,14 L-46,-46 Z"
-              fill="#1B2A4A" stroke="url(#gOro)" stroke-width="3.5"/>
+              fill="#12253E" stroke="url(#gOro)" stroke-width="3.5"/>
         <path d="M0,-52 L37,-39 L37,12 C37,42 19,61 0,71 C-19,61 -37,42 -37,12 L-37,-39 Z"
               fill="none" stroke="rgba(240,206,123,.35)" stroke-width="1"/>
         <text id="inicial" x="0" y="26" text-anchor="middle" font-family="Cinzel, serif"
               font-weight="900" font-size="74" fill="#F5EFE3">S</text>
-        <path d="M-64,66 L64,66 L52,92 L-52,92 Z" fill="#8E1B2E"/>
-        <path d="M-64,66 L-78,58 L-70,80 L-64,74 Z" fill="#6B121F"/>
-        <path d="M64,66 L78,58 L70,80 L64,74 Z" fill="#6B121F"/>
+        <path d="M-64,66 L64,66 L52,92 L-52,92 Z" fill="#80161C"/>
+        <path d="M-64,66 L-78,58 L-70,80 L-64,74 Z" fill="#5C0F15"/>
+        <path d="M64,66 L78,58 L70,80 L64,74 Z" fill="#5C0F15"/>
         <text x="0" y="88" text-anchor="middle" font-family="Cinzel, serif"
               font-weight="700" font-size="24" fill="url(#gOro)">1</text>
       </g>
@@ -262,47 +457,159 @@
 </section>
 
 <section class="mision">
-  <div class="placa">
-    <p class="rubro">Tu misión</p>
+
+  <div class="blason">
+    <span class="filete" aria-hidden="true"></span>
+    <span class="sello-casa">
+      <svg viewBox="-190 -104 380 220" aria-hidden="true">
+        <g fill="#8C949E">
+          <path d="M-60,-34 C-104,-40 -150,-26 -176,-2 C-142,-8 -118,-6 -96,4 C-86,-12 -74,-24 -60,-34 Z"/>
+          <path d="M-58,-10 C-96,-12 -130,0 -150,18 C-122,12 -102,14 -86,22 C-78,10 -68,-1 -58,-10 Z" opacity=".7"/>
+          <path d="M60,-34 C104,-40 150,-26 176,-2 C142,-8 118,-6 96,4 C86,-12 74,-24 60,-34 Z"/>
+          <path d="M58,-10 C96,-12 130,0 150,18 C122,12 102,14 86,22 C78,10 68,-1 58,-10 Z" opacity=".7"/>
+        </g>
+        <g fill="#E9A82B">
+          <path d="M0,-97 L5.6,-86 L17,-84 L8.5,-76 L10.5,-64 L0,-70 L-10.5,-64 L-8.5,-76 L-17,-84 L-5.6,-86 Z"/>
+          <path d="M-48,-88 L-43.6,-79 L-34,-77.4 L-41,-71 L-39.4,-61 L-48,-66 L-56.6,-61 L-55,-71 L-62,-77.4 L-52.4,-79 Z"/>
+          <path d="M48,-88 L52.4,-79 L62,-77.4 L55,-71 L56.6,-61 L48,-66 L39.4,-61 L41,-71 L34,-77.4 L43.6,-79 Z"/>
+          <path d="M-88,-72 L-84.4,-64 L-76,-62.6 L-82,-57 L-80.6,-49 L-88,-53 L-95.4,-49 L-94,-57 L-100,-62.6 L-91.6,-64 Z"/>
+          <path d="M88,-72 L91.6,-64 L100,-62.6 L94,-57 L95.4,-49 L88,-53 L80.6,-49 L82,-57 L76,-62.6 L84.4,-64 Z"/>
+        </g>
+        <path d="M-64,60 L64,60 L52,86 L-52,86 Z" fill="#80161C"/>
+        <path d="M-64,60 L-80,52 L-71,75 L-64,68 Z" fill="#5C0F15"/>
+        <path d="M64,60 L80,52 L71,75 L64,68 Z" fill="#5C0F15"/>
+        <path d="M0,-56 L46,-40 L46,16 C46,50 24,70 0,82 C-24,70 -46,50 -46,16 L-46,-40 Z"
+              fill="#12253E" stroke="#E9A82B" stroke-width="5"/>
+        <text x="0" y="30" text-anchor="middle" font-family="Cinzel, serif"
+              font-weight="900" font-size="72" fill="#FCF9F4">S</text>
+        <circle cx="0" cy="80" r="20" fill="#E9A82B" stroke="#80161C" stroke-width="3.5"/>
+        <text x="0" y="90" text-anchor="middle" font-family="Cinzel, serif"
+              font-weight="900" font-size="27" fill="#12253E">1</text>
+      </svg>
+      <b>La Liga de Salvador</b>
+    </span>
+    <span class="filete" aria-hidden="true"></span>
+  </div>
+
+  <div class="expediente">
+    <span class="mira" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="marca" aria-hidden="true">Liga</span>
+    <div class="cabecera">
+      <h2>Tu misión</h2>
+      <span class="hilo" aria-hidden="true"></span>
+      <span class="folio">EXP-001</span>
+    </div>
     <dl>
-      <div class="dato"><dt>Cuándo</dt><dd>Domingo 4 de octubre, 2026<span>Desde las 2:00 p. m.</span></dd></div>
-      <div class="dato"><dt>Dónde</dt><dd>Av. El Sol Este 176<span>Barranco, Lima</span></dd></div>
-      <div class="dato"><dt>Motivo</dt><dd>Salvador cumple su primer año<span>Hay capa esperándote con tu nombre</span></dd></div>
+      <div class="dato">
+        <dt><span class="glifo" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.2 2"/></svg></span>Cuándo</dt>
+        <dd>Domingo 4 de octubre, 2026<span>Desde las 2:00 p. m.</span></dd>
+      </div>
+      <div class="dato">
+        <dt><span class="glifo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21.5s7-6.2 7-11.2A7 7 0 0 0 5 10.3c0 5 7 11.2 7 11.2z"/><circle cx="12" cy="10" r="2.6"/></svg></span>Dónde</dt>
+        <dd>Av. El Sol Este 176<span>Barranco, Lima</span></dd>
+      </div>
+      <div class="dato">
+        <dt><span class="glifo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.7 6.3.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.3-.9z"/></svg></span>Motivo</dt>
+        <dd>Salvador cumple su primer año<span>Hay capa esperándote con tu nombre</span></dd>
+      </div>
     </dl>
   </div>
 
-  <div class="placa">
-    <p class="rubro">Confirma tu asistencia</p>
-    <p class="pregunta">¿Te sumas a la Liga?</p>
-    <div class="opciones" role="group" aria-label="Asistencia">
-      <button class="chip" data-grupo="asiste" data-valor="Sí, ahí estaré" aria-pressed="true">Sí, ahí estaré</button>
-      <button class="chip" data-grupo="asiste" data-valor="Esta vez no puedo" aria-pressed="false">Esta vez no puedo</button>
+  <div class="expediente">
+    <span class="mira" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="marca" aria-hidden="true">Pruebas</span>
+    <div class="cabecera">
+      <h2>La ceremonia</h2>
+      <span class="hilo" aria-hidden="true"></span>
+      <span class="folio">EXP-002</span>
     </div>
-    <div class="contador">
-      <span>Adultos</span>
-      <button data-paso="-1" data-campo="adultos" aria-label="Menos adultos">&#8722;</button>
-      <output id="adultos">2</output>
-      <button data-paso="1" data-campo="adultos" aria-label="Más adultos">+</button>
+    <p class="intro">Después del almuerzo comienza la misión. Cada niño se convierte
+      en un héroe de verdad.</p>
+    <ol class="pruebas">
+      <li><span class="num" aria-hidden="true">1</span><div>
+        <b>Entrenamiento de fuerza</b><span>Demuestra tu fuerza y tu valentía</span></div></li>
+      <li><span class="num" aria-hidden="true">2</span><div>
+        <b>Prueba de velocidad</b><span>Corre, salta y llega a la meta</span></div></li>
+      <li><span class="num" aria-hidden="true">3</span><div>
+        <b>Misión de rescate</b><span>Ayuda a salvar el día</span></div></li>
+      <li><span class="num" aria-hidden="true">4</span><div>
+        <b>Entrega de diploma</b><span>¡Has completado tu misión!</span></div></li>
+    </ol>
+    <p class="premio">Cada héroe recibe su diploma y su medalla.</p>
+  </div>
+
+  <div class="expediente">
+    <span class="mira" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="marca" aria-hidden="true">Alta</span>
+    <div class="cabecera">
+      <h2>Alta en la Liga</h2>
+      <span class="hilo" aria-hidden="true"></span>
+      <span class="folio">EXP-003</span>
     </div>
-    <div class="contador">
-      <span>Niños</span>
-      <button data-paso="-1" data-campo="ninos" aria-label="Menos niños">&#8722;</button>
-      <output id="ninos">1</output>
-      <button data-paso="1" data-campo="ninos" aria-label="Más niños">+</button>
+
+    <p class="pregunta" id="q-asiste">¿Te sumas a la Liga?</p>
+    <div class="insignias" role="group" aria-labelledby="q-asiste">
+      <button type="button" class="insignia" data-grupo="asiste" data-viene="1"
+              data-valor="Sí, ahí estaré" aria-pressed="true">
+        <span class="borde"><span class="cara">
+          <svg class="visto" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5.5 5.5L20 7"/></svg>
+          <span class="rotulo-i">Sí, ahí estaré</span>
+        </span></span>
+      </button>
+      <button type="button" class="insignia" data-grupo="asiste"
+              data-valor="Esta vez no puedo" aria-pressed="false">
+        <span class="borde"><span class="cara">
+          <svg class="visto" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <span class="rotulo-i">Esta vez no puedo</span>
+        </span></span>
+      </button>
     </div>
-    <p class="cupos" id="cupos" aria-live="polite"></p>
-    <p class="pregunta">La capa del niño o niña que viene</p>
-    <div class="opciones" role="group" aria-label="Capa">
-      <button class="chip" data-grupo="capa" data-valor="Capa azul de superhéroe" aria-pressed="true">Azul, superhéroe</button>
-      <button class="chip" data-grupo="capa" data-valor="Capa rosa de superheroína" aria-pressed="false">Rosa, superheroína</button>
-      <button class="chip" data-grupo="capa" data-valor="Sin capa" aria-pressed="false">No aplica</button>
+
+    <div id="bloque-escuadron">
+      <p class="pregunta" id="q-squad">Tu escuadrón</p>
+      <div class="escuadron" id="escuadron" role="group" aria-labelledby="q-squad"></div>
+      <p class="cupos" id="cupos" aria-live="polite"></p>
     </div>
-    <button class="enviar" id="enviar">Aceptar la misión</button>
+
+    <div id="bloque-capa">
+      <p class="pregunta" id="q-capa">La capa del niño o niña que viene</p>
+      <div class="insignias tres" role="group" aria-labelledby="q-capa">
+        <button type="button" class="insignia" data-grupo="capa"
+                data-valor="Capa de superhéroe (azul marino)" aria-pressed="true">
+          <span class="borde"><span class="cara">
+            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#12253E"/><path d="M13 23.5L2 28C2 20 4 9 6 1h3c-1.5 8-2 18-1.5 24.5z" fill="#F8B020" opacity=".9"/><path d="M6 1h14c.4 1.6.8 3.3 1.1 5H4.9C5.2 4.3 5.6 2.6 6 1z" fill="#0A1526"/></svg></span>
+            <span class="rotulo-i">Héroe</span>
+          </span></span>
+        </button>
+        <button type="button" class="insignia" data-grupo="capa"
+                data-valor="Capa de superheroína (rosa empolvado)" aria-pressed="false">
+          <span class="borde"><span class="cara">
+            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="#E8A088"/><path d="M13 23.5L2 28C2 20 4 9 6 1h3c-1.5 8-2 18-1.5 24.5z" fill="#D09858" opacity=".95"/><path d="M6 1h14c.4 1.6.8 3.3 1.1 5H4.9C5.2 4.3 5.6 2.6 6 1z" fill="#D18770"/></svg></span>
+            <span class="rotulo-i">Heroína</span>
+          </span></span>
+        </button>
+        <button type="button" class="insignia" data-grupo="capa"
+                data-valor="Sin capa" aria-pressed="false">
+          <span class="borde"><span class="cara">
+            <span class="capa-muestra"><svg viewBox="0 0 26 30" aria-hidden="true"><path d="M6 1h14c2 8 4 19 4 27l-11-4.5L2 28C2 20 4 9 6 1z" fill="none" stroke="#9AA1A9" stroke-width="1.4" stroke-dasharray="3 2.5"/></svg></span>
+            <span class="rotulo-i">Sin capa</span>
+          </span></span>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="sello" id="sello">
+      <span class="plancha">
+        <span class="rotulo" id="rotulo">Aceptar la misión</span>
+        <span class="impronta" aria-hidden="true"><span id="impronta">Reclutado</span></span>
+      </span>
+    </button>
     <p class="nota">Se abre WhatsApp con tu respuesta lista para enviar.</p>
   </div>
+
 </section>
 
-<p class="firma">Hecho en casa para Salvador</p>
+<p class="firma">Pequeños héroes, grandes aventuras</p>
 
 <script>
 (function(){
@@ -375,54 +682,131 @@
   var hoja = document.styleSheets[document.styleSheets.length-1];
   try { hoja.insertRule('@keyframes prender{to{opacity:.6}}', hoja.cssRules.length); } catch(e){}
 
-  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa azul de superhéroe', adultos:0, ninos:0 };
-  respuesta.adultos = Math.min(2, cupos);
-  respuesta.ninos   = Math.min(1, cupos - respuesta.adultos);
+  // Siluetas del escuadron. currentColor las tine segun el estado del lugar.
+  var SILUETA = {
+    adulto:'<svg viewBox="0 0 40 52" aria-hidden="true"><g fill="currentColor">'
+      + '<path d="M11 16L3 47l10-3.6z" opacity=".5"/><path d="M29 16l8 31-10-3.6z" opacity=".5"/>'
+      + '<circle cx="20" cy="10" r="6.4"/>'
+      + '<path d="M20 18.4c-6.5 0-11 4.6-11 11.2v12.6c0 2 1.4 3.4 3.4 3.4h15.2c2 0 3.4-1.4 3.4-3.4V29.6c0-6.6-4.5-11.2-11-11.2z"/>'
+      + '</g></svg>',
+    nino:'<svg viewBox="0 0 40 52" aria-hidden="true"><g fill="currentColor">'
+      + '<path d="M13 31L7 47l8-3z" opacity=".5"/><path d="M27 31l6 16-8-3z" opacity=".5"/>'
+      + '<circle cx="20" cy="21" r="6.8"/>'
+      + '<path d="M20 29c-5.6 0-9.6 4-9.6 9.6v5.8c0 1.8 1.2 3 3 3h13.2c1.8 0 3-1.2 3-3v-5.8C29.6 33 25.6 29 20 29z"/>'
+      + '</g></svg>',
+    vacio:'<svg viewBox="0 0 40 52" aria-hidden="true"><path d="M20 18v16M12 26h16" fill="none" '
+      + 'stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg>',
+    yo:'<svg viewBox="0 0 40 52" aria-hidden="true"><g fill="currentColor">'
+      + '<path d="M11 16L3 47l10-3.6z" opacity=".5"/><path d="M29 16l8 31-10-3.6z" opacity=".5"/>'
+      + '<circle cx="20" cy="10" r="6.4"/>'
+      + '<path d="M20 18.4c-6.5 0-11 4.6-11 11.2v12.6c0 2 1.4 3.4 3.4 3.4h15.2c2 0 3.4-1.4 3.4-3.4V29.6c0-6.6-4.5-11.2-11-11.2z"/>'
+      + '</g><path d="M20 26l1.9 3.9 4.3.6-3.1 3 .7 4.3-3.8-2-3.8 2 .7-4.3-3.1-3 4.3-.6z" fill="#D4A02C"/></svg>'
+  };
 
+  // El primer lugar es el invitado: por eso el cupo nunca es ambiguo, se ve.
+  var ETIQUETA_LUGAR = { yo:'Tú', adulto:'Adulto', nino:'Niño', vacio:'Libre' };
+  var SIGUIENTE = { vacio:'adulto', adulto:'nino', nino:'vacio' };
+
+  var escuadron = ['yo'];
+  if (cupos >= 2) escuadron.push('adulto');
+  if (cupos >= 3) escuadron.push('nino');
+  while (escuadron.length < cupos) escuadron.push('vacio');
+
+  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa de superhéroe (azul marino)' };
+  var viene = true;
+
+  var elEscuadron = document.getElementById('escuadron');
   var elCupos = document.getElementById('cupos');
-  function pintarCupos(){
-    var total  = respuesta.adultos + respuesta.ninos;
-    var libres = cupos - total;
-    document.getElementById('adultos').textContent = respuesta.adultos;
-    document.getElementById('ninos').textContent   = respuesta.ninos;
-    elCupos.textContent =
-      (cupos === 1 ? 'Esta invitación es para 1 persona' : 'Esta invitación es para ' + cupos + ' personas') +
-      ', contándote a ti. ' +
-      (libres === 0 ? 'Ya estás en el tope.'
-       : libres === 1 ? 'Te queda 1 lugar.'
-       : 'Te quedan ' + libres + ' lugares.');
-    elCupos.classList.toggle('lleno', libres === 0);
-    document.querySelectorAll('.contador button').forEach(function(b){
-      b.disabled = Number(b.dataset.paso) > 0 ? libres === 0 : respuesta[b.dataset.campo] === 0;
+
+  function cuenta(){
+    var a = 0, n = 0;
+    escuadron.forEach(function(t){
+      if (t === 'yo' || t === 'adulto') a++; else if (t === 'nino') n++;
     });
+    return { adultos:a, ninos:n, total:a + n };
   }
-  document.querySelectorAll('.chip').forEach(function(btn){
+
+  function pintarLugar(b){
+    var i = Number(b.dataset.i), tipo = escuadron[i];
+    b.dataset.tipo = tipo;
+    b.querySelector('.hueco').innerHTML = SILUETA[tipo];
+    b.querySelector('.eti').textContent = ETIQUETA_LUGAR[tipo];
+    if (i > 0){
+      b.setAttribute('aria-label', 'Lugar ' + (i + 1) + ' de ' + cupos + ': ' +
+        ETIQUETA_LUGAR[tipo] + '. Toca para cambiarlo a ' + ETIQUETA_LUGAR[SIGUIENTE[tipo]] + '.');
+    }
+  }
+
+  function pintarCuenta(){
+    var c = cuenta(), libres = cupos - c.total;
+    elCupos.innerHTML = '';
+    var b = document.createElement('b');
+    b.textContent = c.adultos + (c.adultos === 1 ? ' adulto' : ' adultos') +
+                    ' y ' + c.ninos + (c.ninos === 1 ? ' niño' : ' niños');
+    elCupos.appendChild(b);
+    elCupos.appendChild(document.createTextNode(
+      libres === 0 ? ', contándote a ti. El escuadrón está completo.'
+      : libres === 1 ? ', contándote a ti. Queda 1 lugar libre.'
+      : ', contándote a ti. Quedan ' + libres + ' lugares libres.'
+    ));
+    elCupos.classList.toggle('lleno', libres === 0);
+  }
+
+  escuadron.forEach(function(tipo, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'lugar' + (i === 0 ? ' yo' : '');
+    b.dataset.i = i;
+    b.innerHTML = '<span class="borde"><span class="hueco"></span></span><span class="eti"></span>';
+    if (i === 0){
+      b.disabled = true;
+      b.setAttribute('aria-label', 'Tu lugar en el escuadrón, ya está tomado.');
+    }
+    elEscuadron.appendChild(b);
+    pintarLugar(b);
+  });
+  pintarCuenta();
+
+  elEscuadron.addEventListener('click', function(ev){
+    var b = ev.target.closest('.lugar');
+    if (!b || b.disabled) return;
+    var i = Number(b.dataset.i);
+    escuadron[i] = SIGUIENTE[escuadron[i]];
+    pintarLugar(b);
+    pintarCuenta();
+  });
+
+  var elRotulo = document.getElementById('rotulo');
+  document.querySelectorAll('.insignia').forEach(function(btn){
     btn.addEventListener('click', function(){
-      document.querySelectorAll('.chip[data-grupo="'+btn.dataset.grupo+'"]').forEach(function(o){
+      document.querySelectorAll('.insignia[data-grupo="' + btn.dataset.grupo + '"]').forEach(function(o){
         o.setAttribute('aria-pressed','false');
       });
       btn.setAttribute('aria-pressed','true');
       respuesta[btn.dataset.grupo] = btn.dataset.valor;
-    });
-  });
-  document.querySelectorAll('.contador button').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var paso = Number(btn.dataset.paso);
-      if (paso > 0 && respuesta.adultos + respuesta.ninos >= cupos) return;
-      respuesta[btn.dataset.campo] = Math.max(0, respuesta[btn.dataset.campo] + paso);
-      pintarCupos();
+      if (btn.dataset.grupo === 'asiste'){
+        viene = btn.dataset.viene === '1';
+        document.getElementById('bloque-escuadron').classList.toggle('apagado', !viene);
+        document.getElementById('bloque-capa').classList.toggle('apagado', !viene);
+        elRotulo.textContent = viene ? 'Aceptar la misión' : 'Avisar que no puedo';
+      }
     });
   });
 
-  pintarCupos();
+  document.getElementById('impronta').textContent =
+    femenino ? 'Reclutada' : masculino ? 'Reclutado' : 'En la Liga';
 
-  document.getElementById('enviar').addEventListener('click', function(){
+  document.getElementById('sello').addEventListener('click', function(){
+    var c = cuenta();
     var texto = 'Confirmación para el cumpleaños de Salvador\n' +
-      etiqueta + nombre + '\n' + respuesta.asiste + '\n' +
-      'Adultos: ' + respuesta.adultos + '\n' + 'Niños: ' + respuesta.ninos + '\n' +
-      'Total: ' + (respuesta.adultos + respuesta.ninos) + ' de ' + cupos + '\n' +
-      'Capa: ' + respuesta.capa;
+      etiqueta + nombre + '\n' + respuesta.asiste;
+    if (viene){
+      texto += '\nAdultos: ' + c.adultos + '\nNiños: ' + c.ninos +
+               '\nTotal: ' + c.total + ' de ' + cupos + '\nCapa: ' + respuesta.capa;
+    }
+    // La ventana se abre en el mismo gesto del click, si no el navegador la bloquea.
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto), '_blank');
+    this.classList.add('estampado');
   });
 })();
 </script>

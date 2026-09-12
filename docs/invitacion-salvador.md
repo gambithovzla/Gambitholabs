@@ -125,6 +125,96 @@ para que funcione. Simplemente no va a aparecer en búsquedas.
 
 ---
 
+## La identidad real de la fiesta
+
+Los colores y símbolos NO son inventados: salen de las láminas de la fiesta (torta,
+galletas, mochilas, capas), muestreadas pixel a pixel.
+
+| Color | De dónde salió | Hex |
+|-------|----------------|-----|
+| Azul marino | swatch de la lámina de la torta | `#12253E` |
+| Vinotinto | swatch de la lámina de la torta | `#80161C` |
+| Mostaza | el rayo de la mochila | `#F8B020` |
+| Dorado metálico | el "1" de la torta | `#D09858` |
+| Gris | swatch de la lámina de la torta | `#999999` |
+| Blanco / marfil | swatch de la lámina de la torta | `#FCF9F4` |
+| Rosa empolvado | la capa de superheroína | `#E8A088` |
+
+**Los símbolos de la colección son tres:** el escudo alado con la S y el "1" en
+medalla, el **rayo** (símbolo de niño) y la **estrella** (símbolo de niña). Los tres
+forman la celosía del fondo.
+
+**Las capas son reales y van así:** la de niño es azul marino con forro mostaza; la de
+niña es rosa empolvado con forro dorado. Los valores que viajan a WhatsApp lo dicen
+completo ("Capa de superhéroe (azul marino)").
+
+**La ceremonia** del expediente EXP-002 es el programa real: cuatro pruebas después
+del almuerzo y diploma con medalla para cada héroe. Si en algún momento no quieres
+anunciarla, se borra ese bloque `<div class="expediente">` entero y no rompe nada.
+
+Dos cosas del material de la fiesta que la página todavía NO usa:
+
+- En el hero, el "1" va en una cinta simple; en el escudo oficial va dentro de una
+  medalla dorada (el blasón de la página sí la tiene).
+- Las niñas, en las capas, llevan un emblema de corazón con corona en vez del escudo.
+  La página les muestra el escudo a todos.
+
+---
+
+## El fondo es un material, no un color
+
+El degradado azul no decía nada: cualquier página podía tenerlo. Ahora el fondo de la
+página es una **celosía heráldica propia** — el escudo de Salvador y una estrella,
+alternados en celosía y grabados en relieve (una línea negra un pixel abajo, una
+dorada arriba). Es el mismo truco con el que la app de Zelda tesela el Triforce en
+negro sobre negro: aunque tapes todos los textos, la superficie ya tiene dueño.
+
+La celosía es un SVG en `data:` dentro del CSS, sin archivos ni peticiones de red.
+Tesela sin costura porque el escudo se dibuja también en las cuatro esquinas de la
+baldosa: cada una aporta su cuarto y las vecinas completan la figura.
+
+Tres reglas que sostienen el efecto:
+
+1. **El hero no lleva celosía.** Ahí manda la ilustración. El material aparece al
+   salir de la portada, igual que en las apps de Nintendo: portada ilustrada, resto
+   sobre el patrón de la casa.
+2. **Los expedientes son translúcidos** (`rgba(...,.62)`), para que la celosía se lea
+   a través de ellos y la pantalla sea una sola pieza, no cajas flotando.
+3. **Anillos concéntricos** grabados dentro de cada hexágono y de cada placa, para que
+   todo parezca salido del mismo taller.
+
+El suelo (`--suelo:#070C16`) es más profundo que el azul del hero a propósito: el oro
+solo lee como metal si tiene penumbra debajo.
+
+---
+
+## Cómo está hecha la interfaz (para no romperla)
+
+Los controles no son botones de formulario decorados: son objetos del mundo de la Liga.
+
+- **Expedientes** en vez de tarjetas: sin borde de 1px alrededor, sino cuatro esquinas
+  de mira (`.mira i`), trama de puntos de imprenta y grano, y una filigrana vertical.
+- **Insignias hexagonales** en vez de chips: el hexágono es un `clip-path` sobre dos
+  cajas anidadas — `.borde` (dorado) contiene a `.cara` con 2px de padding, y ese
+  padding *es* el filo dorado. Las dos **necesitan `display:block`**; si alguna queda
+  en `inline`, el hexágono colapsa a una astilla.
+- **El escuadrón** reemplaza al contador `− 2 +`. Hay exactamente tantas placas como
+  cupos, así que pasarse es imposible por construcción, no por validación. La primera
+  placa es el invitado, va en vino, dice "TÚ" y está `disabled`: ahí se ve que el cupo
+  lo incluye.
+- **El sello** en vez de un botón ancho: esquinas cortadas en octágono (`clip-path`),
+  cuatro remaches (`radial-gradient`), doble filete dorado (`box-shadow` interior) y
+  una impronta que se estampa al tocarlo.
+
+Texto corto dentro de los hexágonos: "Azul", "Rosa", "Sin capa". Las etiquetas largas
+se salen del `clip-path` y se cortan. Lo que viaja a WhatsApp sigue siendo el texto
+completo, que está en `data-valor`.
+
+La tipografía de rótulos es Saira Stencil One (Google Fonts). Si no carga, cae a la
+sans del sistema y todo sigue legible.
+
+---
+
 ## Cómo mandarlo por WhatsApp
 
 1. Primero el video de la invitación.
