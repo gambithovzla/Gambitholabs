@@ -68,34 +68,60 @@ Sube `index.html` por FTP a la raíz del dominio o subdominio (`public_html/` en
 
 ## Los links por invitado
 
-La página lee dos parámetros de la URL:
+La página lee tres parámetros de la URL:
 
-| Parámetro | Para qué sirve | Valores |
-|-----------|----------------|---------|
-| `n` | El nombre y la inicial del escudo | El primer nombre del invitado |
-| `g` | Si el saludo dice "reclutado" o "reclutada" | `f` mujer · `m` hombre |
+| Parámetro | Para qué sirve | Valores | Si no lo pones |
+|-----------|----------------|---------|----------------|
+| `n` | Nombre e inicial del escudo | Primer nombre | Dice "Tony" |
+| `g` | "reclutado" o "reclutada" | `f` mujer · `m` hombre | Frase neutra |
+| `c` | Cuántas personas pueden venir | `1` a `12` | 3 |
 
 Base: `https://www.gambitholabs.com/invitacion/index.html`
 
-| Invitada/o | Link | Lee |
-|------------|------|-----|
-| Chely | `...index.html?n=Chely&g=f` | Has sido **reclutada**, Chely |
-| Tony | `...index.html?n=Tony&g=m` | Has sido **reclutado**, Tony |
-| Maria Jose | `...index.html?n=Maria%20Jose&g=f` | Has sido **reclutada**, Maria Jose |
+| Invitada/o | Link | Pueden ir |
+|------------|------|-----------|
+| Chely | `...index.html?n=Chely&g=f` | 3 (Chely + 2) |
+| Tony | `...index.html?n=Tony&g=m&c=2` | 2 (Tony + 1) |
+| Giovanna | `...index.html?n=Giovanna&g=f&c=5` | 5 (Giovanna + 4) |
 
-El `&` separa los dos parámetros; el `?` va una sola vez, antes del primero.
-Los espacios van como `%20`, pero es más simple usar solo el primer nombre.
+El `?` va una sola vez, antes del primer parámetro, y cada parámetro siguiente se
+pega con `&`. Los espacios van como `%20`, pero es más simple usar solo el primer
+nombre.
 
-**Si te olvidas del `g`** no se rompe nada ni se equivoca de género: el saludo cambia
-a una frase neutra, "Ya eres parte de la Liga, Chely", que sirve para cualquiera. Ese
-es también lo que se ve al abrir el link pelado, sin parámetros.
+### Los cupos incluyen al invitado
 
-El género también ajusta la etiqueta del mensaje que llega a tu WhatsApp
-("Invitada: Chely" / "Invitado: Tony" / "Invitado/a: Chely" si no pusiste `g`).
+`c=3` significa **3 personas en total, contando al invitado**: él o ella más dos.
+No es "el invitado más tres". La página lo dice en pantalla, debajo de los
+contadores, para que nadie tenga que adivinarlo:
 
-No lo dejé adivinando el género a partir del nombre a propósito: "Chely" termina en
--y, "Ruth" y "Beatriz" no terminan en -a, y "Luca" o "Nicola" son de hombre. Cualquier
-regla automática se equivoca con alguien, que es justo lo que queríamos evitar.
+> Esta invitación es para 3 personas, contándote a ti. Te queda 1 lugar.
+
+Adultos + niños nunca pasa del tope: al llegar, los botones `+` se apagan. Y el
+mensaje que te llega a WhatsApp incluye la línea `Total: 3 de 3`, así que puedes
+verificar de un vistazo si alguien se pasó.
+
+**Importante:** es un tope de cortesía, no una cerradura. Todo corre en el navegador
+del invitado, así que quien sepa editar una URL puede subirse el número. Para un
+cumpleaños alcanza y sobra; lo que de verdad controlas es el `Total` que lees en el
+mensaje antes de darle la capa a nadie.
+
+### El género no se adivina
+
+No infiero el género del nombre a propósito: "Chely" termina en -y, "Ruth" y
+"Beatriz" no terminan en -a, y "Luca" o "Nicola" son de hombre. Cualquier regla
+automática misgenera a alguien, que es justo lo que queríamos evitar. Por eso sin `g`
+el saludo es neutro ("Ya eres parte de la Liga") en vez de masculino: olvidarse del
+parámetro nunca le escribe el género equivocado a nadie.
+
+---
+
+## Que no salga en Google
+
+`app/robots.ts` tiene `/invitacion` en la lista de `disallow`, junto con `/playbook`.
+Los buscadores que respetan robots.txt no la van a indexar.
+
+Eso no la vuelve privada: cualquiera con el link la puede abrir, y así tiene que ser
+para que funcione. Simplemente no va a aparecer en búsquedas.
 
 ---
 

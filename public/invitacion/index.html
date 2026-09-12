@@ -168,6 +168,9 @@
     color:var(--marfil);border:1px solid rgba(154,161,169,.4);cursor:pointer;font-family:inherit;
   }
   .contador output{min-width:28px;text-align:center;font-size:19px}
+  .contador button:disabled{opacity:.28;cursor:not-allowed}
+  .cupos{font-size:13px;color:var(--plomo);margin:-10px 0 26px;line-height:1.6}
+  .cupos.lleno{color:var(--oro)}
   .enviar{
     display:block;width:100%;font-family:'Cinzel',serif;font-weight:700;
     font-size:16px;letter-spacing:.08em;background:var(--vino);color:var(--marfil);
@@ -287,6 +290,7 @@
       <output id="ninos">1</output>
       <button data-paso="1" data-campo="ninos" aria-label="Más niños">+</button>
     </div>
+    <p class="cupos" id="cupos" aria-live="polite"></p>
     <p class="pregunta">La capa del niño o niña que viene</p>
     <div class="opciones" role="group" aria-label="Capa">
       <button class="chip" data-grupo="capa" data-valor="Capa azul de superhéroe" aria-pressed="true">Azul, superhéroe</button>
@@ -319,6 +323,12 @@
     masculino ? 'Has sido reclutado,' :
                 'Ya eres parte de la Liga,';
   var etiqueta = femenino ? 'Invitada: ' : masculino ? 'Invitado: ' : 'Invitado/a: ';
+
+  // Cupos de la invitacion, contando al invitado: c=2 -> el invitado + 1.
+  // Por defecto 3. Es un tope de cortesia, no una cerradura: quien quiera puede
+  // editar la URL. Lo que vale es el total que llega en el mensaje de WhatsApp.
+  var cupos = parseInt(params.get('c'), 10);
+  if (!(cupos >= 1 && cupos <= 12)) cupos = 3;
 
   var WHATSAPP = '51925130858'; // número con código de país, sin + ni espacios
 
@@ -365,7 +375,27 @@
   var hoja = document.styleSheets[document.styleSheets.length-1];
   try { hoja.insertRule('@keyframes prender{to{opacity:.6}}', hoja.cssRules.length); } catch(e){}
 
-  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa azul de superhéroe', adultos:2, ninos:1 };
+  var respuesta = { asiste:'Sí, ahí estaré', capa:'Capa azul de superhéroe', adultos:0, ninos:0 };
+  respuesta.adultos = Math.min(2, cupos);
+  respuesta.ninos   = Math.min(1, cupos - respuesta.adultos);
+
+  var elCupos = document.getElementById('cupos');
+  function pintarCupos(){
+    var total  = respuesta.adultos + respuesta.ninos;
+    var libres = cupos - total;
+    document.getElementById('adultos').textContent = respuesta.adultos;
+    document.getElementById('ninos').textContent   = respuesta.ninos;
+    elCupos.textContent =
+      (cupos === 1 ? 'Esta invitación es para 1 persona' : 'Esta invitación es para ' + cupos + ' personas') +
+      ', contándote a ti. ' +
+      (libres === 0 ? 'Ya estás en el tope.'
+       : libres === 1 ? 'Te queda 1 lugar.'
+       : 'Te quedan ' + libres + ' lugares.');
+    elCupos.classList.toggle('lleno', libres === 0);
+    document.querySelectorAll('.contador button').forEach(function(b){
+      b.disabled = Number(b.dataset.paso) > 0 ? libres === 0 : respuesta[b.dataset.campo] === 0;
+    });
+  }
   document.querySelectorAll('.chip').forEach(function(btn){
     btn.addEventListener('click', function(){
       document.querySelectorAll('.chip[data-grupo="'+btn.dataset.grupo+'"]').forEach(function(o){
@@ -377,16 +407,20 @@
   });
   document.querySelectorAll('.contador button').forEach(function(btn){
     btn.addEventListener('click', function(){
-      var campo = btn.dataset.campo;
-      respuesta[campo] = Math.max(0, Math.min(12, respuesta[campo] + Number(btn.dataset.paso)));
-      document.getElementById(campo).textContent = respuesta[campo];
+      var paso = Number(btn.dataset.paso);
+      if (paso > 0 && respuesta.adultos + respuesta.ninos >= cupos) return;
+      respuesta[btn.dataset.campo] = Math.max(0, respuesta[btn.dataset.campo] + paso);
+      pintarCupos();
     });
   });
+
+  pintarCupos();
 
   document.getElementById('enviar').addEventListener('click', function(){
     var texto = 'Confirmación para el cumpleaños de Salvador\n' +
       etiqueta + nombre + '\n' + respuesta.asiste + '\n' +
       'Adultos: ' + respuesta.adultos + '\n' + 'Niños: ' + respuesta.ninos + '\n' +
+      'Total: ' + (respuesta.adultos + respuesta.ninos) + ' de ' + cupos + '\n' +
       'Capa: ' + respuesta.capa;
     window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto), '_blank');
   });
